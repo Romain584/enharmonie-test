@@ -59,6 +59,7 @@ window.addEventListener('scroll', () => {
 
 // ========================================
 // TARIFS TOGGLE (À l'unité / Mensuel)
+// Force cache bust: 2026-01-09
 // ========================================
 
 function initTarifsToggle() {
