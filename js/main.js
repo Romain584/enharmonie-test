@@ -494,11 +494,62 @@ style.textContent = `
 document.head.appendChild(style);
 
 // ========================================
+// MODALES LÉGALES
+// ========================================
+
+// Ouvrir les modales
+document.querySelectorAll('.open-modal').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const modalId = trigger.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Empêche le scroll du body
+        }
+    });
+});
+
+// Fermer les modales
+document.querySelectorAll('.modal-close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', () => {
+        const modalId = closeBtn.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Réactive le scroll
+        }
+    });
+});
+
+// Fermer la modale en cliquant en dehors du contenu
+document.querySelectorAll('.modal-legal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+// Fermer avec la touche Échap
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-legal.active').forEach(modal => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+});
+
+// ========================================
 // CONSOLE MESSAGE
 // ========================================
 
 console.log(
-    '%c🎹 EnHarmonie %c- Site développé avec passion',
+    '%c🎹 Enharmonie %c- Site développé avec passion',
     'color: #d4af37; font-size: 20px; font-weight: bold; font-family: Cormorant Garamond, serif;',
     'color: #f5f5dc; font-size: 14px;'
 );
