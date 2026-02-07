@@ -7,6 +7,16 @@
     <meta name="keywords" content="cours piano, professeur piano Brest, cours musique, apprendre piano, piano débutant">
     <title>Enharmonie - Cours de Piano Élégants et Personnalisés</title>
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-38WXBM0CRD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-38WXBM0CRD');
+    </script>
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -369,12 +379,16 @@
                     
                 </div>
                 
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <p>✅ Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.</p>
+                </div>
+                
                 <form class="contact-form" data-aos="fade-left" id="contactForm" action="https://formsubmit.co/coursdepiano@enharmonieweb.com" method="POST">
                     <!-- Configuration FormSubmit -->
                     <input type="hidden" name="_subject" value="Nouveau message depuis Enharmonie">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://en-harmonie.vercel.app/?success=true#contact">
+                    <input type="hidden" name="_next" value="https://enharmonieweb.com/?success=true#contact">
                     
                     <div class="form-group">
                         <label for="name">Nom complet</label>
