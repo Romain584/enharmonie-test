@@ -327,6 +327,27 @@ document.querySelectorAll('[data-aos]').forEach((element) => {
 
 const contactForm = document.getElementById('contactForm');
 
+// Vérifier si le paramètre success est présent dans l'URL
+window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        const successMessage = document.getElementById('successMessage');
+        if (successMessage) {
+            successMessage.style.display = 'block';
+            contactForm.style.display = 'none';
+            
+            // Scroll vers le message de succès
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Nettoyer l'URL après 3 secondes
+            setTimeout(() => {
+                const newUrl = window.location.pathname + window.location.hash;
+                window.history.replaceState({}, document.title, newUrl);
+            }, 3000);
+        }
+    }
+});
+
 contactForm.addEventListener('submit', (e) => {
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     
