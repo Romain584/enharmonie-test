@@ -211,9 +211,10 @@ a:hover {
 }
 
 .logo img {
-    max-width: 100%;
+    max-width: 450px;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 .visually-hidden {
@@ -1318,6 +1319,11 @@ a:hover {
     
     .hero {
         background-attachment: scroll;
+    }
+    
+    .hero-content {
+        padding-top: 4rem;
+        transform: translateY(-15%);
     }
     
     .logo h1 {
