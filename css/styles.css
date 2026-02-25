@@ -1,4 +1,24 @@
 /* ========================================
+   FONT OPTIMIZATION
+   ======================================== */
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 300 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/cormorantgaramond/v19/UcC73FwrK3iLTeHuS_fvxkMrgEQVwnly2xYbhcXZ.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/inter/v17/1Ptvg83HX_SGhgqk2hAjQlW_mEuZ0FsSdQ.woff2) format('woff2');
+}
+
+/* ========================================
    VARIABLES & RESET
    ======================================== */
 
