@@ -784,6 +784,59 @@ a:hover {
 }
 
 /* ========================================
+   SECTION BREST
+   ======================================== */
+
+.brest-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-alt) 100%);
+}
+
+.brest-section h2 {
+    color: var(--color-gold);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.brest-section .section-subtitle {
+    color: var(--color-ivory);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.1rem;
+}
+
+.brest-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(212, 175, 55, 0.05);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.brest-content p {
+    color: var(--color-ivory);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+}
+
+.brest-content p:last-of-type {
+    margin-bottom: var(--spacing-lg);
+}
+
+.brest-content strong {
+    color: var(--color-gold);
+    font-weight: 600;
+}
+
+.brest-cta {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+/* ========================================
    SECTION AVIS
    ======================================== */
 
