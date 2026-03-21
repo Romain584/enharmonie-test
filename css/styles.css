@@ -79,6 +79,15 @@ h2 {
     margin-bottom: var(--spacing-md);
 }
 
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--color-ivory);
+    margin-bottom: var(--spacing-md);
+}
+
 h3 {
     font-size: clamp(1.5rem, 3vw, 2rem);
     margin-bottom: var(--spacing-sm);
@@ -574,7 +583,7 @@ a:hover {
     background: linear-gradient(180deg, var(--color-dark) 0%, var(--color-dark-alt) 100%);
 }
 
-.tarifs-section h2 {
+.tarifs-section h2, .tarifs-section .section-title {
     text-align: center;
 }
 
@@ -792,7 +801,7 @@ a:hover {
     background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-alt) 100%);
 }
 
-.brest-section h2 {
+.brest-section h2, .brest-section .section-title {
     color: var(--color-gold);
     font-size: 2.5rem;
     margin-bottom: var(--spacing-sm);
@@ -845,7 +854,7 @@ a:hover {
     background: var(--color-dark);
 }
 
-.avis-section h2 {
+.avis-section h2, .avis-section .section-title {
     text-align: center;
 }
 
@@ -963,7 +972,7 @@ a:hover {
     background: var(--color-dark-alt);
 }
 
-.faq-section h2 {
+.faq-section h2, .faq-section .section-title {
     text-align: center;
 }
 
@@ -1042,7 +1051,7 @@ a:hover {
     background: linear-gradient(180deg, var(--color-dark-alt) 0%, var(--color-dark) 100%);
 }
 
-.contact-section h2 {
+.contact-section h2, .contact-section .section-title {
     text-align: center;
 }
 
@@ -1366,7 +1375,7 @@ a:hover {
         padding: 0 var(--spacing-sm);
     }
     
-    h2 {
+    h2, .section-title {
         font-size: 2rem;
     }
     
@@ -1449,7 +1458,7 @@ a:hover {
     box-shadow: 0 10px 50px rgba(212, 175, 55, 0.2);
 }
 
-.modal-content h2 {
+.modal-content h2, .modal-content .section-title {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     color: var(--gold);
@@ -1569,7 +1578,7 @@ a:hover {
         max-height: 95vh;
     }
     
-    .modal-content h2 {
+    .modal-content h2, .modal-content .section-title {
         font-size: 1.8rem;
     }
     

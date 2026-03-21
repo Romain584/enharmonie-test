@@ -5,7 +5,6 @@
 const nav = document.getElementById('navFixed');
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.querySelector('.nav-menu');
-let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
@@ -16,8 +15,6 @@ window.addEventListener('scroll', () => {
     } else {
         nav.classList.remove('visible');
     }
-    
-    lastScrollY = currentScrollY;
 });
 
 // Toggle menu mobile
@@ -38,14 +35,26 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-menu a');
 
+// Cache section positions to avoid forced layout reflow on every scroll
+let sectionPositions = [];
+
+function cacheSectionPositions() {
+    sectionPositions = Array.from(sections).map(section => ({
+        id: section.getAttribute('id'),
+        top: section.getBoundingClientRect().top + window.scrollY
+    }));
+}
+
+document.addEventListener('DOMContentLoaded', cacheSectionPositions);
+window.addEventListener('resize', cacheSectionPositions);
+
 window.addEventListener('scroll', () => {
     let current = '';
+    const scrollY = window.scrollY;
     
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
+    sectionPositions.forEach(({ id, top }) => {
+        if (scrollY >= (top - 200)) {
+            current = id;
         }
     });
     

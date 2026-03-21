@@ -86,15 +86,37 @@
     }
     </script>
     
+    <!-- Critical CSS inline -->
+    <style>
+    :root{--color-dark:#0a0a0a;--color-dark-alt:#1a1a1a;--color-gold:#d4af37;--color-ivory:#f5f5dc;--color-white-off:#f8f8f8;--font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif;--spacing-sm:1rem;--spacing-md:2rem;--spacing-lg:4rem;--transition-smooth:all .3s cubic-bezier(.4,0,.2,1)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:var(--font-body);background-color:var(--color-dark);color:var(--color-white-off);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:400;line-height:1.2;color:var(--color-ivory)}
+    .hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;background:url('images/piano-keys-placeholder.jpg') center/cover no-repeat;background-attachment:fixed;overflow:hidden}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,.85) 0%,rgba(26,26,26,.75) 50%,rgba(42,42,42,.85) 100%);z-index:1}
+    .hero-content{position:relative;z-index:2;text-align:center;padding:var(--spacing-md);animation:fadeInUp 1.2s ease-out}
+    .logo img{max-width:450px;height:auto;display:block;margin:0 auto}
+    .subtitle{font-size:clamp(1rem,2vw,1.3rem);color:var(--color-gold);margin-bottom:var(--spacing-lg);font-weight:300;animation:fadeInUp 1.2s ease-out .3s both}
+    .cta-button{display:inline-block;padding:1rem 2.5rem;background:transparent;color:var(--color-ivory);border:1px solid var(--color-gold);font-size:1.1rem;font-weight:400;letter-spacing:1px;cursor:pointer;animation:fadeInUp 1.2s ease-out .6s both}
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:480px){.logo img{max-width:280px;margin:0 auto}.hero{background-attachment:scroll}}
+    </style>
+
+    <!-- LCP image preload -->
+    <link rel="preload" as="image" href="images/piano-keys-placeholder.jpg" fetchpriority="high">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css?v=20260122" media="all">
+
+    <!-- Styles (non-bloquant) -->
+    <link rel="stylesheet" href="css/styles.css?v=20260321" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/styles.css?v=20260321" media="all"></noscript>
 </head>
 <body>
     
@@ -104,7 +126,7 @@
         <div class="hero-content">
             <div class="logo">
                 <h1 class="visually-hidden">Cours de Piano Brest - Professeur Particulier | Enharmonie</h1>
-                <img src="images/FullLogo - Modifié.png" alt="Cours de piano Brest - Enharmonie">
+                <img src="images/FullLogo - Modifié.png" alt="Cours de piano Brest - Enharmonie" width="900" height="720" fetchpriority="high">
             </div>
             <p class="subtitle">Cours de piano à Brest – Transmission, écoute et élégance musicale</p>
             <a href="#contact" class="cta-button">Réserver un cours</a>
@@ -197,7 +219,7 @@
     <!-- Section Tarifs -->
     <section id="tarifs" class="tarifs-section">
         <div class="container">
-            <h2 data-aos="fade-up">Tarifs</h2>
+            <p class="section-title" data-aos="fade-up">Tarifs</p>
             <p class="section-subtitle" data-aos="fade-up">Des formules adaptées à vos besoins</p>
             
             <!-- Switch Toggle -->
@@ -292,7 +314,7 @@
     <!-- Section Pourquoi Brest -->
     <section class="brest-section">
         <div class="container">
-            <h2 data-aos="fade-up">Pourquoi choisir des cours de piano à Brest ?</h2>
+            <p class="section-title" data-aos="fade-up">Pourquoi choisir des cours de piano à Brest ?</p>
             <p class="section-subtitle" data-aos="fade-up">Un enseignement musical au cœur de la ville</p>
             
             <div class="brest-content" data-aos="fade-up">
@@ -315,7 +337,7 @@
     <!-- Section Avis -->
     <section id="avis" class="avis-section">
         <div class="container">
-            <h2 data-aos="fade-up">Témoignages</h2>
+            <p class="section-title" data-aos="fade-up">Témoignages</p>
             <p class="section-subtitle" data-aos="fade-up">Ce que disent mes élèves</p>
             
             <div class="avis-carousel" id="avisCarousel">
@@ -373,7 +395,7 @@
     <!-- Section FAQ -->
     <section id="faq" class="faq-section">
         <div class="container">
-            <h2 data-aos="fade-up">Questions fréquentes</h2>
+            <p class="section-title" data-aos="fade-up">Questions fréquentes</p>
             <p class="section-subtitle" data-aos="fade-up">Tout ce que vous devez savoir</p>
             
             <div class="faq-container">
@@ -443,7 +465,7 @@
     <!-- Section Contact -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 data-aos="fade-up">Commencez votre voyage musical</h2>
+            <p class="section-title" data-aos="fade-up">Commencez votre voyage musical</p>
             <p class="section-subtitle" data-aos="fade-up">Contactez-moi pour réserver votre premier cours</p>
             
             <div class="contact-content">
@@ -568,7 +590,7 @@
     <div id="modalMentions" class="modal-legal">
         <div class="modal-content">
             <span class="modal-close" data-modal="modalMentions">&times;</span>
-            <h2>Mentions Légales</h2>
+            <p class="section-title">Mentions Légales</p>
             
             <p>
                 Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site Enharmonie l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.
@@ -625,7 +647,7 @@
     <div id="modalConfidentialite" class="modal-legal">
         <div class="modal-content">
             <span class="modal-close" data-modal="modalConfidentialite">&times;</span>
-            <h2>Politique de Confidentialité</h2>
+            <p class="section-title">Politique de Confidentialité</p>
             
             <h3>1. Introduction</h3>
             <p>
@@ -707,7 +729,7 @@
     <div id="modalCGV" class="modal-legal">
         <div class="modal-content">
             <span class="modal-close" data-modal="modalCGV">&times;</span>
-            <h2>Conditions Générales de Vente (CGV)</h2>
+            <p class="section-title">Conditions Générales de Vente (CGV)</p>
             
             <h3>1. Objet</h3>
             <p>
