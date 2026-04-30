@@ -1418,6 +1418,34 @@ a:hover {
     font-size: 0.85rem;
 }
 
+.footer-credit {
+    margin-top: 0.6rem;
+    opacity: 0.5;
+    font-size: 0.78rem;
+}
+
+.footer-credit-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--color-white-off);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-credit-link:hover {
+    opacity: 1.8;
+    color: var(--color-gold);
+}
+
+.footer-credit-logo {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
 /* ========================================
    RESPONSIVE
    ======================================== */
