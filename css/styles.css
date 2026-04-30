@@ -826,23 +826,15 @@ a:hover {
 }
 
 .pass-culture-badge {
-    display: inline-block;
-    background: rgba(185, 36, 121, 0.15);
-    border: 1px solid rgba(185, 36, 121, 0.4);
-    border-radius: 50px;
-    padding: 0.4rem 1.2rem;
+    display: flex;
+    justify-content: center;
     margin-bottom: var(--spacing-md);
 }
 
-.pc-logo-text {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: #e05aab;
-    letter-spacing: 0.5px;
-}
-
-.pc-logo-text strong {
-    color: #f07cc3;
+.pc-logo-img {
+    width: 240px;
+    height: auto;
+    display: block;
 }
 
 .pass-culture-content h2 {
