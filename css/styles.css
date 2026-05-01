@@ -1404,6 +1404,8 @@ a:hover {
 .footer-contact p {
     font-size: 0.9rem;
     margin-bottom: var(--spacing-xs);
+    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 .social-links {
